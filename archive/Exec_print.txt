@@ -11,10 +11,12 @@
 #SBATCH --array=1
 #SBATCH --output=~/Yi_Lab/Lab_WorkDir/Dennis/slurm-archive/handwritten_number_classification_project/%j_julia_hello_world.out
 
+module load julia
+
 cd $SLURM_SUBMIT_DIR
 
 cd ~/Yi_Lab/Lab_WorkDir/Dennis/handwritten_number_classification_project
 
-Rscript julia_hello_world.jl
+srun julia julia_hello_world.jl
 echo julia_hello_world.jl
 echo "SLURM Job ID        : ${SLURM_JOB_ID}"

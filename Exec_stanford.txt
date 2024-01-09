@@ -1,0 +1,20 @@
+#!/bin/bash -l
+
+#SBATCH -J julia
+#SBATCH -n 1
+#SBATCH -c 1                              # one core per task
+#SBATCH -t 1:00:00
+#SBATCH --mem=1gb
+#SBATCH -o /Yi_Lab/Lab_WorkDir/Dennis/slurm-archive/handwritten_number_classification_project/julia-%j.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=dennis.joshy@gmail.com
+
+module load julia
+
+cd $SLURM_SUBMIT_DIR
+
+cd ~/Yi_Lab/Lab_WorkDir/Dennis/handwritten_number_classification_project
+
+srun julia julia_hello_world.jl
+echo julia_hello_world.jl
+echo "SLURM Job ID        : ${SLURM_JOB_ID}"

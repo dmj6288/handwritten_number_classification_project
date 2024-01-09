@@ -1,0 +1,4 @@
+ERROR: Unable to locate a modulefile for 'julia'
+Hello, Julia!
+julia_hello_world.jl
+SLURM Job ID        : 12766
